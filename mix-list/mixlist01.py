@@ -17,3 +17,5 @@ print("The second item in the list (port): " + str(my_list[1]) )
 # display the third item in the list
 print("The last item in the list (state): " + my_list[2] )
 
+# display only the IP addresses
+print("The IP adresses are : " + iplist[3] + " and " + iplist[4])

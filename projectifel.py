@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+import pyfiglet
+
 # Dictionary of countries
 
 countries= {
@@ -37,7 +39,7 @@ for x in countries:
              # as of line 25, x is equal to a key from our dictionary, the name of a country
              # so we can slice the dictionary "countries" using x as the key
              # correct = correct + 1 # give a point
-             print("You guessed it correctly, Congrats") # give an encouraging message :)
+             print( "You guessed it correctly, Congrats") # give an encouraging message :)
              print()
              correct += 1
              break
