@@ -16,12 +16,26 @@ def showStatus():
   #print the player's current status
   print('---------------------------')
   print('You are in the ' + currentRoom)
+  # This gives a brief description of current room
+  print(rooms[currentRoom]['description'])
   #print the current inventory
   print('Inventory : ' + str(inventory))
   #print an item if there is one
   if "item" in rooms[currentRoom]:
     print('You see a ' + rooms[currentRoom]['item'])
   print("---------------------------")
+
+# Player will have to answer the trivia question correctly in order to collect the item
+def triviaFunction(triviaItem):
+  print("---------------------------")
+  print("To collect the prize you must answer the question correctly")
+  print(triviaDict[triviaItem][0])
+  answer= input(">")
+
+  if answer.lower() == triviaDict[triviaItem][1]:
+      print("Correct. Prize earned!!!")
+  else:
+      triviaFunction(triviaItem)
 
 #an inventory, which is initially empty
 inventory = []
@@ -34,7 +48,9 @@ rooms = {
                   'south' : 'Kitchen',
                   'east'  : 'Dining Room',
                   'west'  : 'Bedroom',
-                  'item'  : 'key'
+                  'item'  : 'key',
+                  'description' : 'a very dark hall and must move with precaution. Making the wrong move could                                   be fatal so follow instructions carefully. South of this room is the
+                                   kitchen. Going east will lead to dining room and west will be the bedroom',
                 },
 
             'Kitchen' : {
@@ -60,6 +76,14 @@ rooms = {
               },
          }
 
+triviaDict = {
+        'flashlight' : ['According to greek mythology, who was the first woman on earth?', 'pandora'],
+        'key' :        ['Which African country was formely known as Abyssinia', 'ethiopia'],
+        'cookie' :     ['What was the first toy to be advertised on television', 'mr. potato head'],
+        'potion' :     ['Which Shakespeare play is the longest', 'hamlet']}
+
+         
+
 #start the player in the Hall
 currentRoom = 'Hall'
 
@@ -76,7 +100,7 @@ while True:
   #['go','east']
   move = ''
   while move == '':
-    move = input('>')
+    move = input('> ')
 
   # split allows an items to have a space on them
   # get golden key is returned ["get", "golden key"]          
@@ -96,6 +120,7 @@ while True:
   if move[0] == 'get' :
     #if the room contains an item, and the item is the one they want to get
     if "item" in rooms[currentRoom] and move[1] in rooms[currentRoom]['item']:
+      triviaFunction(move[1])
       #add the item to their inventory
       inventory += [move[1]]
       #display a helpful message
