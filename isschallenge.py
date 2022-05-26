@@ -10,7 +10,6 @@ def main():
     ts= datetime.datetime.fromtimestamp( epoch_time )
     print(f"""
 CURRENT LOCATION OF THE ISS:
-{ts}
 Lon: {resp["iss_position"]["longitude"]}
 Lat: {resp["iss_position"]["latitude"]} """)
 

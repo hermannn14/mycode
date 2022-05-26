@@ -62,6 +62,8 @@ rooms = {
                   'south': 'Garden',
                   'item' : 'potion',
                   'north' : 'Pantry',
+                  'description': 'the real place where the magic happens. Grab a quick bite before continuing
+                                  your adventure. Once you\'re satiated remember where you stand. West of this                                  room is the hall, north is the pantry and south is the garden where you will                                  go once you collect all the items',
                },
             'Garden' : {
                   'north' : 'Dining Room'
