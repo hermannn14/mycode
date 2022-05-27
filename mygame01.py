@@ -48,9 +48,8 @@ rooms = {
                   'south' : 'Kitchen',
                   'east'  : 'Dining Room',
                   'west'  : 'Bedroom',
-                  'item'  : 'key',
-                  'description' : 'a very dark hall and must move with precaution. Making the wrong move could                                   be fatal so follow instructions carefully. South of this room is the
-                                   kitchen. Going east will lead to dining room and west will be the bedroom',
+                  'item'  : 'key', 
+                  'description' : '''a very dark hall and must move with precaution. Making the wrong move could be fatal so follow instructions carefully. South of this room is the kitchen. Going east will lead to dining room and west will be the bedroom''',
                 },
 
             'Kitchen' : {
@@ -61,20 +60,21 @@ rooms = {
                   'west' : 'Hall',
                   'south': 'Garden',
                   'item' : 'potion',
-                  'north' : 'Pantry',
-                  'description': 'the real place where the magic happens. Grab a quick bite before continuing
-                                  your adventure. Once you\'re satiated remember where you stand. West of this                                  room is the hall, north is the pantry and south is the garden where you will                                  go once you collect all the items',
-               },
+                  'north' : 'Pantry', 
+                  'description': '''the real place where the magic happens. Grab a quick bite before continuing your adventure. Once you\'re satiated remember where you stand. West of this room is the hall, north is the pantry and south is the garden where you will go once you collect all the items including the potion in this room''',
+                  },
             'Garden' : {
                   'north' : 'Dining Room'
                },
             'Pantry' : {
                   'south' : 'Dining Room',
                   'item' : 'cookie',
+                   'description' : '''This  is just a distraction. You are not here to eat junk food. Get out''',
               },
             'Bedroom' : {
                   'east' : 'Hall',
                   'item' : 'flashlight',
+                  'description' : '''You\'re not here to sleep. You are on a mission collect the flashlight and bounce. East of here is the hall and the only way out. Goodluck.''',
               },
          }
 
@@ -136,7 +136,7 @@ while True:
       
   ## Define how a player can win
   if currentRoom == 'Garden' and 'key' in inventory and 'potion' in inventory and 'flashlight' in inventory:
-    print('You escaped the house with the ultra rare key and magic potion... YOU WIN!')
+    print('You escaped the house with the ultra rare key, flashlight and magic potion... YOU WIN!')
     break
 
   ## If a player enters a room with a monster
