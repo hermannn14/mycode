@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# An object of Flask class is our WSGI application
+
 from flask import Flask
 from flask import redirect
 from flask import url_for
@@ -29,12 +29,9 @@ def wakanda():
     return jsonify(warrior)
 
 
-# route() function of the Flask class is a
-# decorator, tells the application which URL
-# should call the associated function
 @app.route("/html")
 def hello_world():
-   return render_template('helloname.html', name= "herman")
+   return render_template('helloname.html', name= "Hermanator")
 
 if __name__ == "__main__":
    app.run(host="0.0.0.0", port=2224) # runs the application
